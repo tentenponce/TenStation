@@ -1,0 +1,17 @@
+@keyframes circlebg {
+    0% {background: #f33446;}
+    50% {background: #e1e1e1;}
+	100% {background: #f33446;}
+}
+
+@keyframes tentenbg {
+    0% {color: #e1e1e1;}
+    50% {color: #f33446;}
+	100% {color: #e1e1e1;}
+}
+
+@keyframes welcome{
+	0% {font-size: 50px;}
+	50%{font-size: 60px;}
+	100%{font-size: 50px;}
+}

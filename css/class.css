@@ -1,0 +1,163 @@
+.tenfont{
+	color: #fafafa;
+	font-family: calibri;
+}
+
+#progressbar{
+	-webkit-appearance: none;
+}
+
+#progressbar::-webkit-slider-thumb{
+	-webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #F44336;
+    margin-top: -5px;
+}
+
+#progressbar::-webkit-slider-runnable-track{
+	width: 300px;
+    height: 7px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+#progressbar::-webkit-slider-fill-lower{
+	width: 300px;
+    height: 5px;
+    background: #181818;
+    border: none;
+    border-radius: 3px;
+}
+
+.musictime{
+	color: #424242;
+	font-family: calibri;
+	font-size: 12px;
+}
+
+.controlbuttons{
+	background: transparent;
+	border: none;
+	font-size: 12px;
+}
+
+.tbutton {
+	background-color: rgba(0, 0, 0, 0);
+	font: normal normal normal 14px/1.6 'Open Sans', sans-serif;
+	border: 2px solid white;
+	padding: 4px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	margin: 10px;
+	border-radius: 3px;
+}
+.tbutton:hover {
+	background-color: white;
+	color: black;
+}
+.tbutton:active {
+	background-color: rgba(168,168,168,1);
+}
+		
+.tinput{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	width: 275px;
+	outline: none;
+	padding: 0px 0px 0px 0px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+.liheader:hover{
+	background: rgba(244, 64, 52, .5);
+}
+
+.headerbuts{
+	color: #fafafa;
+	cursor: pointer;
+	text-decoration: none;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.liheader{
+	margin: 0 -2px;
+	padding: 10px 30px;
+	transition: all .8s;
+}
+
+#homecircle{
+	animation: circlebg 3s infinite;
+	-webkit-animation: circlebg 3s infinite;
+	transition: all .8s;
+	cursor: pointer;
+}
+
+#welcome{
+	animation: welcome 1s;
+	font-size: 50px;
+	transition: all .8s;
+}
+#welcome:hover{
+	font-size: 60px;
+}
+
+#time{
+	transition: all .8s;
+	font-size: 45px;
+}
+
+#time:hover{
+	font-size: 50px;
+}
+
+#date{
+	transition: all .8s;
+	font-size: 15px;
+}
+
+#date:hover{
+	font-size: 20px;
+}
+
+#tenten{
+	animation: tentenbg 3s infinite;
+	cursor: pointer;
+	transition: all .8s;
+}
+
+#tenten:hover{
+	font-size: 70px;
+}
+
+.contactlink{
+	font-family: calibri;
+	color: white;
+	text-decoration: none; 
+	font-weight: bold; 
+	font-size: 30px;
+	transition: all .8s;
+}
+
+.contactlink:hover{
+	font-size: 50px;
+}
+
+.musiccontrol{
+	cursor: pointer;
+	transition: all .8s;
+}
+
+.musiccontrol:hover{
+	height: 25px;
+	width: 25px;
+}
