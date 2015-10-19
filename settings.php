@@ -22,7 +22,7 @@
 				<FONT class="tenfont" style="font-weight: bold">Comment: </FONT>
 				<INPUT name="comment" value="<?php echo $comment; ?>" class="tinput" style="text-align: left; width: 600px; margin-left: 10px;"><BR><BR>
 				<INPUT class="tbutton" type="submit" value="Update Information" name="edit">
-				<?php if(!$user == "tenten"){
+				<?php if($user != "tenten"){
 					echo "<INPUT onclick='return confirm('Are you sure you want to delete this account?');' 
 						style='background: rgba(244, 64, 52, .5); float: right;' class='tbutton' type='submit' value='Delete Account' name='delete'>";
 					}?>
