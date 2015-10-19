@@ -3,7 +3,7 @@ Simple Web Site Design. (with Music Player)
 
 Live Action: https://www.youtube.com/watch?v=z8x8tMSN22Q&
 
-<B>What's This:</B> A Project for STI College Caloocan. (Activities tab is not yet done, to be updated.)
+<B>What's This:</B> A Project for STI College Caloocan. (Activities tab is Finished.)
  
 <B>Features:</B>
 
