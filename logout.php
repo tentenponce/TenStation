@@ -3,7 +3,7 @@
 	
 	if(!empty(['logout'])){
 		session_destroy();
-		echo "<script>window.location.href = 'login.php';</script>";
+		echo "<script>parent.location = 'login.php';</script>";
 	}
 	
 	if(empty($_SESSION['login'])){

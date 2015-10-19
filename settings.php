@@ -22,6 +22,10 @@
 				<FONT class="tenfont" style="font-weight: bold">Comment: </FONT>
 				<INPUT name="comment" value="<?php echo $comment; ?>" class="tinput" style="text-align: left; width: 600px; margin-left: 10px;"><BR><BR>
 				<INPUT class="tbutton" type="submit" value="Update Information" name="edit">
+				<?php if(!$user == "tenten"){
+					echo "<INPUT onclick='return confirm('Are you sure you want to delete this account?');' 
+						style='background: rgba(244, 64, 52, .5); float: right;' class='tbutton' type='submit' value='Delete Account' name='delete'>";
+					}?>
 			</FORM>
 			<DIV style="text-align: center;">
 				<?php
@@ -35,19 +39,37 @@
 							$school = $_POST["school"];
 							$comment = $_POST['comment'];
 							
-							$sql = "UPDATE infotb SET name='$name', age=$age, birthdate='$birthdate', address='$address', school='$school', comment='$comment'";
+							if(is_numeric($age)){
 							
-							if(mysqli_query($conn, $sql)){
-								echo "<FONT class='tenfont'>Information Successfully Updated, Reloading page...</FONT>";
-								header("Refresh: 0;");
+								$sql = "UPDATE infotb SET name='$name', age=$age, birthdate='$birthdate', address='$address', school='$school', comment='$comment' WHERE user=
+										'" . $_SESSION['user'] . "'";
 								
+								if(mysqli_query($conn, $sql)){
+									echo "<FONT class='tenfont'>Information Successfully Updated, Reloading page...</FONT>";
+									header("Refresh: 0;");
+									
+								}else{
+									echo "<FONT class='tenfont'>Error updating record: " . mysqli_error($conn) . "</FONT>";
+								}
 							}else{
-								echo "<FONT class='tenfont'>Error updating record: " . mysqli_error($conn) . "</FONT>";
+								echo "<FONT class='tenfont'>Age must be number.</FONT>";
 							}
-							
 						}else{
 							echo "<FONT class='tenfont'>Please fill it all up.</FONT>";
 						}
+					}
+					
+					if(!empty($_POST['delete'])){
+						$sql = "DELETE FROM infotb WHERE user='$user'"; 
+						mysqli_query($conn, $sql);
+						
+						$sql = "DELETE FROM admintb WHERE username='$user'"; 
+						mysqli_query($conn, $sql);
+						
+						session_destroy();
+						
+						header("Refresh: 0;");
+						echo "<script>parent.location = 'logout.php?logout=1';</script>";
 					}
 				?>
 			</DIV>

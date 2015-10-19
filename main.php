@@ -35,8 +35,8 @@
 		<DIV style="position: fixed; display:inline-block; margin: 0 0 10px 10px; border-radius: 5px; border: 2px solid black;
 				padding: 10px; background: #f5f5f5; top: 86%; box-shadow: 0 -1px 20px -5px;">
 			<DIV style="display: inline-block; padding: 5px;">
-				<audio id="audio" src="audio/bgmusic.mp3"></audio>
-				<INPUT id="progressbar" type="range" onclick="updateadio()" onmousedown="pausemusic()" value="0" style="display: block; width: 300px;">
+				<audio id="audio"></audio>
+				<INPUT id="progressbar" type="range" onclick="updateadio()" onmousedown="progressHold()" value="0" style="display: block; width: 300px;">
 				<DIV style="margin-top: 10px;">
 					<FONT class="musictime" id="currenttime" style="float: left;">0:00</FONT>
 					<FONT style="float: right;" class="musictime" id="maxtime">0:00</FONT>
@@ -44,7 +44,6 @@
 						<button class="controlbuttons" onclick="playmusic()"><IMG class="musiccontrol" src="images/play.png" width="20px" height="20px"></button>
 						<button class="controlbuttons" onclick="pausemusic()"><IMG class="musiccontrol" src="images/pause.png" width="20px" height="20px"></button>
 					</DIV>
-					
 				</DIV>
 			</DIV>
 		</DIV>

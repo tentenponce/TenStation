@@ -17,10 +17,28 @@ var colorcoding = "rgba(244, 64, 52, 1)";
 //colorheader.style.transition = "background .8s";
 //headertext.style.transition = "color .8s";
 
-playmusic();
+player.src = "audio/bgmusic" + checkAudio();
+player.autoplay = "true";
+player.loop = "true";
 load_home();
 updateTime();
 setInterval(updateTime, 1000);
+
+function checkAudio(){
+	if(!!(player.canPlayType && player.canPlayType('audio/mpeg;').replace(/no/, ''))){
+		return ".mp3";
+	}
+	
+	if(!!(player.canPlayType && player.canPlayType('audio/ogg; codecs="vorbis"').replace(/no/, ''))){
+		return ".ogg";
+	}
+	
+	if(!!(player.canPlayType && player.canPlayType('audio/wav; codecs="1"').replace(/no/, ''))){
+		return ".wav";
+	}
+	
+	return alert("Your Browser does not support any of this audio extension: mp3, wav, ogg.");
+}
 
 function updateTime(){
     var currentTime = new Date();
@@ -104,58 +122,42 @@ function load_out(){
 	unload_tabcolors();
 	colorcoding = "rgba(121, 85, 72, 1)";
 	
-	headertext.style.color = "white";
 	out.style.background = colorcoding;
-	colorheader.style.background = colorcoding;
 }
 
 function load_contact(){
 	unload_tabcolors();
 	document.getElementById("content").innerHTML='<object width="100%" height="100%" type="text/html" data="contact.html" ></object>';
-	//colorcoding = "rgba(139, 195, 74, 1)";
-	
-	//headertext.style.color = "white";
+
 	contact.style.background = colorcoding;
-	//colorheader.style.background = colorcoding;
 }
 
 function load_about(){
 	unload_tabcolors();
 	document.getElementById("content").innerHTML='<object width="100%" height="100%" type="text/html" data="about.php" ></object>';
-	//colorcoding = "rgba(139, 195, 74, 1)";
-	
-	//headertext.style.color = "white";
+
 	about.style.background = colorcoding;
-	//colorheader.style.background = colorcoding;
 }
 
 function load_act(){
 	unload_tabcolors();
 	document.getElementById("content").innerHTML='<object width="100%" height="100%" type="text/html" data="activity.html" ></object>';
-	//colorcoding = "rgba(0, 188, 212, 1)";
-	
-	//headertext.style.color = "white";
+
 	act.style.background = colorcoding;
-	//colorheader.style.background = colorcoding;
 }
 
 function load_sett(){
 	unload_tabcolors();
 	document.getElementById("content").innerHTML='<object width="100%" height="100%" type="text/html" data="settings.php" ></object>';
-	//colorcoding = "rgba(255, 235, 59, 1)";
-	
-	//headertext.style.color = "black";
+
 	sett.style.background = colorcoding;
-	//colorheader.style.background = colorcoding;
 }		
 	
 function load_home(){
 	unload_tabcolors();
-	document.getElementById("content").innerHTML='<object width="100%" height="100%" type="text/html" data="home.html" ></object>';
-	
-	//headertext.style.color = "white";
+	document.getElementById("content").innerHTML='<object width="100%" height="100%" type="text/html" data="home.php" ></object>';
+
 	home.style.background = colorcoding;
-	//colorheader.style.background = colorcoding;
 }
 
 function unload_tabcolors(){
@@ -166,9 +168,13 @@ function unload_tabcolors(){
 	contact.style.background = "";
 }
 
+function progressHold(){
+	player.pause();
+	currenttime.innerHTML = progressbar.value;
+}
+
 function playmusic(){
 	player.play();
-	player.loop = true;
 }		
 		
 function pausemusic(){
